@@ -382,6 +382,9 @@
     <ClInclude Include="MyView.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="XPButton.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Ryprint.cpp">
@@ -412,6 +415,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="MyView.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="XPButton.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

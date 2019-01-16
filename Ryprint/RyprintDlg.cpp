@@ -65,7 +65,19 @@ void CRyprintDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_EDT_STATUS, m_edtStatus);
 	DDX_Control(pDX, IDC_GRP_MAIN, m_grpmain);
 	DDX_Control(pDX, IDC_EDIT_MODULE, m_queryString);
+	DDX_Control(pDX, IDC_BTN_MODGRPS, m_btnModgrps);
+	DDX_Control(pDX, IDC_BTN_MODLOAD, m_btnModload);
+	DDX_Control(pDX, IDC_BTN_MODEXPORT, m_btnModexport);
+	DDX_Control(pDX, IDC_BTN_MODNEW, m_btnModnew);
+	DDX_Control(pDX, IDC_BTN_MODMODIFY, m_btnModmodify);
+	DDX_Control(pDX, IDC_BTN_MODDEL, m_btn_Moddel);
 	DDX_Control(pDX, IDC_BTN_QUERY_MODULE, m_btnQuery);
+	DDX_Control(pDX, IDC_BTN_PRINT_BILL, m_btnPrintbill);
+	DDX_Control(pDX, IDC_BTN_RESET, m_btnReset);
+	DDX_Control(pDX, IDC_BTN_SAVEDATA, m_btnSavedata);
+	DDX_Control(pDX, IDC_BTN_DATALIST, m_btnDatalist);
+	DDX_Control(pDX, IDC_BTN_PRINT_BILLS, m_btnPrintbatch);
+	DDX_Control(pDX, IDC_BTN_SETUP, m_btnSetup);
 }
 
 BEGIN_MESSAGE_MAP(CRyprintDlg, CDialogEx)

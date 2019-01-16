@@ -9,7 +9,8 @@
 #include "afxcmn.h"
 #include "MyView.h"
 #include "MyDocument.h"
-#include "afxbutton.h"
+#include "XPButton.h"		//自绘按钮类
+
 
 // CRyprintDlg 对话框
 class CRyprintDlg : public CDialogEx
@@ -64,18 +65,10 @@ public:
 
 	// 单据查询关键字
 	CEdit m_queryString;
-	// 查询模板
-	CButton m_btnQuery;
-	//批量打印按钮
-	CButton m_btnPrintBills;
-	// 打印设置
-	CButton m_btnSetup;
-	// 当前模式 0-未选中模板打印 1-选中模板打印 2-模板设计，但模板未初始化 3-模板编辑状态
-	int m_imode;
 	//当前凭证模板
 	CBillModule m_currModule;
-	// Cancel按钮
-	CButton m_btnCancel;
+	// 当前模式 0-未选中模板打印 1-选中模板打印 2-模板设计，但模板未初始化 3-模板编辑状态
+	int m_imode;
 
 	// 设置按钮状态
 	int SetButtonStatus(int imode);
@@ -98,4 +91,30 @@ public:
 
 	// 导入按钮图标
 	int LoadBtnIcon(void);
+	// 按钮类别管理
+	CXPButton m_btnModgrps;
+	// 按钮模板导入
+	CXPButton m_btnModload;
+	// 按钮模板导出
+	CXPButton m_btnModexport;
+	// 按钮新建模板
+	CXPButton m_btnModnew;
+	// 按钮模板修改
+	CXPButton m_btnModmodify;
+	// 按钮模板删除
+	CXPButton m_btn_Moddel;
+	// 按钮查
+	CXPButton m_btnQuery;
+	// 按钮单笔打印
+	CXPButton m_btnPrintbill;
+	// 按钮重新录入
+	CXPButton m_btnReset;
+	// 按钮保存数据
+	CXPButton m_btnSavedata;
+	// 按钮数据仓库
+	CXPButton m_btnDatalist;
+	// 按钮批量打印
+	CXPButton m_btnPrintbatch;
+	// 按钮打印设置
+	CXPButton m_btnSetup;
 };
