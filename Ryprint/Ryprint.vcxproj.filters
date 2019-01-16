@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="res\Ryprint.rc2">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Ryprint.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="..\Debug\bills.mht" />
+    <None Include="..\..\..\..\Users\ryzho\Pictures\农行支票.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\abottom.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\add.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\add1.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\add2.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\address.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\aleft.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\aligncenter.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\alignjustify.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\alignleft.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\alignright.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\approve.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\aright.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\atop.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\cancel.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\cellstyle.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\check.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\colorpicker.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\convert.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\copy.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\custom.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\cut.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\del.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\del1.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\delete.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\document.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\edit.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\exit.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\font.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\forward.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\gallery.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\home.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\info.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\lock.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\new.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\openfolder.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\option.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\pict.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\pictdel.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\picture.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\picturetopgallery.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\preview.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\print.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\query.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\refresh.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\same.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\sameheight.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\samewidth.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\save.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\select.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\setup.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\sort.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\sort1.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\zoom.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\abottom.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\add.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\add1.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\add2.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\address.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\aleft.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\aligncenter.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\alignjustify.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\alignleft.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\alignright.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\approve.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\aright.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\atop.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\cancel.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\cellstyle.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\check.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\colorpicker.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\convert.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\copy.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\custom.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\cut.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\del.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\del1.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\delete.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\document.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\edit.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\exit.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\font.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\forward.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\gallery.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\home.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\info.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\lock.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\new.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\openfolder.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\option.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\pict.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\pictdel.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\picture.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\picturetopgallery.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\preview.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\print.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\query.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\refresh.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\same.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\sameheight.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\samewidth.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\save.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\select.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\setup.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\sort.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\sort1.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\zoom.ico">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Ryprint.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="RyprintDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="explorer1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ryini.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgNewMod.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BillModule.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ModlueDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MyDocument.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MyView.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Ryprint.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="RyprintDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="explorer1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ryini.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgNewMod.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BillModule.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ModlueDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MyDocument.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MyView.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Ryprint.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

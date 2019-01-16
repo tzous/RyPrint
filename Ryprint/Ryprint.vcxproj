@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{CFDC3FB6-6205-48F5-87CF-1E037AA897B7}</ProjectGuid>
+    <RootNamespace>Ryprint</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\Users\ryzho\Pictures\农行支票.bmp" />
+    <None Include="..\Debug\bills.mht" />
+    <None Include="ReadMe.txt" />
+    <None Include="res\abottom.ico" />
+    <None Include="res\abottom.png" />
+    <None Include="res\add.ico" />
+    <None Include="res\add.png" />
+    <None Include="res\add1.ico" />
+    <None Include="res\add1.png" />
+    <None Include="res\add2.ico" />
+    <None Include="res\add2.png" />
+    <None Include="res\address.ico" />
+    <None Include="res\address.png" />
+    <None Include="res\aleft.ico" />
+    <None Include="res\aleft.png" />
+    <None Include="res\aligncenter.ico" />
+    <None Include="res\aligncenter.png" />
+    <None Include="res\alignjustify.ico" />
+    <None Include="res\alignjustify.png" />
+    <None Include="res\alignleft.ico" />
+    <None Include="res\alignleft.png" />
+    <None Include="res\alignright.ico" />
+    <None Include="res\alignright.png" />
+    <None Include="res\approve.ico" />
+    <None Include="res\approve.png" />
+    <None Include="res\aright.ico" />
+    <None Include="res\aright.png" />
+    <None Include="res\atop.ico" />
+    <None Include="res\atop.png" />
+    <None Include="res\cancel.ico" />
+    <None Include="res\cancel.png" />
+    <None Include="res\cellstyle.ico" />
+    <None Include="res\cellstyle.png" />
+    <None Include="res\check.ico" />
+    <None Include="res\check.png" />
+    <None Include="res\colorpicker.ico" />
+    <None Include="res\colorpicker.png" />
+    <None Include="res\convert.ico" />
+    <None Include="res\convert.png" />
+    <None Include="res\copy.ico" />
+    <None Include="res\copy.png" />
+    <None Include="res\custom.ico" />
+    <None Include="res\custom.png" />
+    <None Include="res\cut.ico" />
+    <None Include="res\cut.png" />
+    <None Include="res\del.ico" />
+    <None Include="res\del.png" />
+    <None Include="res\del1.ico" />
+    <None Include="res\del1.png" />
+    <None Include="res\delete.ico" />
+    <None Include="res\delete.png" />
+    <None Include="res\document.ico" />
+    <None Include="res\document.png" />
+    <None Include="res\edit.ico" />
+    <None Include="res\edit.png" />
+    <None Include="res\exit.ico" />
+    <None Include="res\exit.png" />
+    <None Include="res\font.ico" />
+    <None Include="res\font.png" />
+    <None Include="res\forward.ico" />
+    <None Include="res\forward.png" />
+    <None Include="res\gallery.ico" />
+    <None Include="res\gallery.png" />
+    <None Include="res\home.ico" />
+    <None Include="res\home.png" />
+    <None Include="res\info.ico" />
+    <None Include="res\info.png" />
+    <None Include="res\lock.ico" />
+    <None Include="res\lock.png" />
+    <None Include="res\new.ico" />
+    <None Include="res\new.png" />
+    <None Include="res\openfolder.ico" />
+    <None Include="res\openfolder.png" />
+    <None Include="res\option.ico" />
+    <None Include="res\option.png" />
+    <None Include="res\pict.ico" />
+    <None Include="res\pict.png" />
+    <None Include="res\pictdel.ico" />
+    <None Include="res\pictdel.png" />
+    <None Include="res\picture.ico" />
+    <None Include="res\picture.png" />
+    <None Include="res\picturetopgallery.ico" />
+    <None Include="res\picturetopgallery.png" />
+    <None Include="res\preview.ico" />
+    <None Include="res\preview.png" />
+    <None Include="res\print.ico" />
+    <None Include="res\print.png" />
+    <None Include="res\query.ico" />
+    <None Include="res\query.png" />
+    <None Include="res\refresh.ico" />
+    <None Include="res\refresh.png" />
+    <None Include="res\Ryprint.ico" />
+    <None Include="res\Ryprint.rc2" />
+    <None Include="res\same.ico" />
+    <None Include="res\same.png" />
+    <None Include="res\sameheight.ico" />
+    <None Include="res\sameheight.png" />
+    <None Include="res\samewidth.ico" />
+    <None Include="res\samewidth.png" />
+    <None Include="res\save.ico" />
+    <None Include="res\save.png" />
+    <None Include="res\select.ico" />
+    <None Include="res\select.png" />
+    <None Include="res\setup.ico" />
+    <None Include="res\setup.png" />
+    <None Include="res\sort.ico" />
+    <None Include="res\sort.png" />
+    <None Include="res\sort1.ico" />
+    <None Include="res\sort1.png" />
+    <None Include="res\zoom.ico" />
+    <None Include="res\zoom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BillModule.h" />
+    <ClInclude Include="DlgNewMod.h" />
+    <ClInclude Include="explorer1.h" />
+    <ClInclude Include="ModlueDlg.h" />
+    <ClInclude Include="MyDocument.h" />
+    <ClInclude Include="MyView.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="Ryini.h" />
+    <ClInclude Include="Ryprint.h" />
+    <ClInclude Include="RyprintDlg.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BillModule.cpp" />
+    <ClCompile Include="DlgNewMod.cpp" />
+    <ClCompile Include="explorer1.cpp" />
+    <ClCompile Include="ModlueDlg.cpp" />
+    <ClCompile Include="MyDocument.cpp" />
+    <ClCompile Include="MyView.cpp" />
+    <ClCompile Include="Ryini.cpp" />
+    <ClCompile Include="Ryprint.cpp" />
+    <ClCompile Include="RyprintDlg.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Ryprint.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="Ryprint.rc" _x007B_8856F961-340A-11D0-A96B-00C04FD705A2_x007D_="CExplorer1" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
