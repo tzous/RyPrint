@@ -9,6 +9,7 @@
 
 /////////////////////////////////////////////////////////////////////////////
 // CXPButton window
+enum XPBUTTON_POSITION {XPBUTTON_TEXT,XPBUTTON_PICTURE,XPBUTTON_HORIZONTAL,XPBUTTON_VERTICAL};
 
 class CXPButton : public CButton
 {
@@ -45,8 +46,14 @@ protected:
 
 	//按钮贴图
 	BOOL m_bPic;	//有贴图时值为true，反之为false
+	int m_nPicWidth;	//贴图宽度
+	int m_nPicHeight;	//贴图高度
 	CBitmap m_hBmp;	//图片资源
-	int m_nPosition;	//按钮图片文本类别 0-纯文本 1-纯图片 2-左图右文本 3-上图下文本
+	XPBUTTON_POSITION m_nPosition;	//按钮图片文本类别 0-纯文本 1-纯图片 2-左图右文本 3-上图下文本
+
+	//边框
+	BOOL m_bBorder;	//是否有边框
+
 
 // Operations
 public:
@@ -77,9 +84,13 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	// 设置按钮图片资源
-	int SetBmp(UINT nIDResource);
+	int SetPicture(UINT nIDResource);
+	// 设置贴图大小
+	int SetPictureSize(int nPicWidth, int nPicHeight);
 	// 设置图片文字显示模式
-	int SetPosition(int nPosition);
+	int SetPosition(XPBUTTON_POSITION nPosition);
+	// 设置是否有边框
+	int SetBorder(BOOL bBorder);
 };
 
 /////////////////////////////////////////////////////////////////////////////

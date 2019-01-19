@@ -16,23 +16,26 @@ static char THIS_FILE[] = __FILE__;
 CXPButton::CXPButton()
 {
 	m_BoundryPen.CreatePen(PS_INSIDEFRAME | PS_SOLID, 1, RGB(0, 0, 0));
-	m_InsideBoundryPenLeft.CreatePen(PS_INSIDEFRAME | PS_SOLID, 3, RGB(250, 196, 88)); 
-	m_InsideBoundryPenRight.CreatePen(PS_INSIDEFRAME | PS_SOLID, 3, RGB(251, 202, 106));
-	m_InsideBoundryPenTop.CreatePen(PS_INSIDEFRAME | PS_SOLID, 2, RGB(252, 210, 121));
-	m_InsideBoundryPenBottom.CreatePen(PS_INSIDEFRAME | PS_SOLID, 2, RGB(229, 151, 0));
+	m_InsideBoundryPenLeft.CreatePen(PS_INSIDEFRAME | PS_SOLID, 1, RGB(200, 200, 200)); 
+	m_InsideBoundryPenRight.CreatePen(PS_INSIDEFRAME | PS_SOLID, 1, RGB(50, 50, 50));
+	m_InsideBoundryPenTop.CreatePen(PS_INSIDEFRAME | PS_SOLID, 1, RGB(200, 200, 200));
+	m_InsideBoundryPenBottom.CreatePen(PS_INSIDEFRAME | PS_SOLID, 1, RGB(50, 50, 50));
 	
-	m_FillActive.CreateSolidBrush(RGB(223, 222, 236));
+	m_FillActive.CreateSolidBrush(RGB(222, 223, 236));
 	m_FillInactive.CreateSolidBrush(RGB(222, 223, 236));
 	
-	m_InsideBoundryPenLeftSel.CreatePen(PS_INSIDEFRAME | PS_SOLID, 3, RGB(153, 198, 252)); 
-	m_InsideBoundryPenTopSel.CreatePen(PS_INSIDEFRAME | PS_SOLID, 2, RGB(162, 201, 255));
-	m_InsideBoundryPenRightSel.CreatePen(PS_INSIDEFRAME | PS_SOLID, 3, RGB(162, 189, 252));
-	m_InsideBoundryPenBottomSel.CreatePen(PS_INSIDEFRAME | PS_SOLID, 2, RGB(162, 201, 255));
+	m_InsideBoundryPenLeftSel.CreatePen(PS_INSIDEFRAME | PS_SOLID, 1, RGB(200, 200, 200)); 
+	m_InsideBoundryPenTopSel.CreatePen(PS_INSIDEFRAME | PS_SOLID, 1, RGB(50, 50, 50));
+	m_InsideBoundryPenRightSel.CreatePen(PS_INSIDEFRAME | PS_SOLID, 1, RGB(200, 200, 200));
+	m_InsideBoundryPenBottomSel.CreatePen(PS_INSIDEFRAME | PS_SOLID, 1, RGB(50, 50, 50));
 	
 	m_bOver = m_bSelected = m_bTracking = m_bFocus = FALSE;
 	m_bPic = FALSE;
-	m_nPosition = 0;
-	
+	m_nPosition = XPBUTTON_TEXT;
+	m_bBorder = TRUE;
+	m_nPicWidth = 16;
+	m_nPicHeight = 16;
+
 }
 
 CXPButton::~CXPButton()
@@ -122,7 +125,9 @@ void CXPButton::DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct)
 	pt.x = 5;
 	pt.y = 5;
 	CPen* hOldPen = pDC->SelectObject(&m_BoundryPen);
-	pDC->RoundRect(&rect, pt);
+	if(m_bBorder) {
+		pDC->RoundRect(&rect, pt);
+	}
 	
 	//获取按钮的状态
 	if (state & ODS_FOCUS)
@@ -171,19 +176,15 @@ void CXPButton::DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct)
 		CRect picrect;
 		BOOL bBitBlt = TRUE;
 		switch(m_nPosition) {
-		case 0: bBitBlt = FALSE;
+		case XPBUTTON_TEXT: bBitBlt = FALSE;
 			break;
-		case 1: picrect = rect;
+		case XPBUTTON_PICTURE: picrect = rect;
 			break;
-		case 2: picrect.top = rect.top + 2;
+		case XPBUTTON_HORIZONTAL: picrect.top = rect.top + 1;
 			picrect.left = rect.left + 2;
-			picrect.right = picrect.left + 32;
-			picrect.bottom = picrect.top + 32;
 			break;
-		case 3: picrect.top = rect.top + 2;
-			picrect.left = (rect.right+rect.left)/2  - 16;
-			picrect.right = picrect.left + 32;
-			picrect.bottom = picrect.top + 32;
+		case XPBUTTON_VERTICAL: picrect.top = rect.top + 2;
+			picrect.left = (rect.right + rect.left - m_nPicWidth)/2;
 			break;
 		}
 		if(bBitBlt){
@@ -192,7 +193,7 @@ void CXPButton::DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct)
 			MemDC.SelectObject(&m_hBmp);
 			BITMAP bm;
 			m_hBmp.GetBitmap(&bm);
-			pDC->BitBlt(picrect.left, picrect.top, picrect.right, picrect.bottom, &MemDC, 0, 0, SRCCOPY);
+			TransparentBlt(lpDrawItemStruct->hDC,picrect.left, picrect.top,m_nPicWidth,m_nPicHeight,MemDC.m_hDC,0,0,bm.bmWidth,bm.bmHeight,RGB(255,255,255));
 		}
 	}
 
@@ -208,13 +209,13 @@ void CXPButton::DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct)
 		int nMode = pDC->SetBkMode(TRANSPARENT);
 		BOOL bDrawText = TRUE;
 		switch(m_nPosition) {
-		case 1:bDrawText = FALSE;
+		case XPBUTTON_PICTURE:bDrawText = FALSE;
 			break;
-		case 2:
-			pt.Offset(32,0);
+		case XPBUTTON_HORIZONTAL:
+			pt.Offset(m_nPicWidth/4,0);
 			break;
-		case 3:
-			pt.Offset(0,16);
+		case XPBUTTON_VERTICAL:
+			pt.Offset(0,m_nPicHeight/2);
 			break;
 		}
 		if(bDrawText) {
@@ -271,6 +272,7 @@ void CXPButton::DoGradientFill(CDC *pDC, CRect* rect)
 //绘制按钮的内边框
 void CXPButton::DrawInsideBorder(CDC *pDC, CRect* rect)
 {
+	/*
 	CPen *pLeft, *pRight, *pTop, *pBottom;
 	
 	if (m_bSelected && !m_bOver)
@@ -288,20 +290,33 @@ void CXPButton::DrawInsideBorder(CDC *pDC, CRect* rect)
 		pBottom = &m_InsideBoundryPenBottom;
 	}
 	
-	CPoint oldPoint = pDC->MoveTo(rect->left, rect->bottom - 1);
+	CPoint oldPoint = pDC->MoveTo(rect->left , rect->bottom );
 	CPen* pOldPen = pDC->SelectObject(pLeft);
-	pDC->LineTo(rect->left, rect->top + 1);
+	pDC->LineTo(rect->left , rect->top);
 	pDC->SelectObject(pRight);
-	pDC->MoveTo(rect->right - 1, rect->bottom - 1);
-	pDC->LineTo(rect->right - 1, rect->top);
+	pDC->MoveTo(rect->right, rect->bottom );
+	pDC->LineTo(rect->right, rect->top);
 	pDC->SelectObject(pTop);
-	pDC->MoveTo(rect->left - 1, rect->top);
-	pDC->LineTo(rect->right - 1, rect->top);
+	pDC->MoveTo(rect->left , rect->top);
+	pDC->LineTo(rect->right , rect->top);
 	pDC->SelectObject(pBottom);
 	pDC->MoveTo(rect->left, rect->bottom);
-	pDC->LineTo(rect->right - 1, rect->bottom);
+	pDC->LineTo(rect->right, rect->bottom);
 	pDC->SelectObject(pOldPen);
 	pDC->MoveTo(oldPoint);
+
+	*/
+	CBrush brBk, *pOldbrush;
+	if (m_bSelected && !m_bOver) {
+		brBk.CreateSolidBrush(RGB(240, 240, 240));
+	}
+	else {
+		brBk.CreateSolidBrush(RGB(225, 225, 225));
+	}
+	pOldbrush = pDC->SelectObject(&brBk);
+	pDC->FillRect(rect, &brBk);
+	pDC->SelectObject(pOldbrush);
+	brBk.DeleteObject();
 
 	if (m_bSelected && !m_bOver)
 		DrawFocusRect(pDC->m_hDC,rect);
@@ -311,17 +326,32 @@ void CXPButton::DrawInsideBorder(CDC *pDC, CRect* rect)
 
 
 // 设置按钮图片资源
-int CXPButton::SetBmp(UINT nIDResource)
+int CXPButton::SetPicture(UINT nIDResource)
 {
 	m_hBmp.LoadBitmap(nIDResource);
 	m_bPic = TRUE;
 	return 0;
 }
 
+// 设置贴图大小
+int CXPButton::SetPictureSize(int nPicWidth, int nPicHeight)
+{
+	m_nPicWidth = nPicWidth;
+	m_nPicHeight = nPicHeight;
+	return 0;
+}
+
 
 // 设置图片文字显示模式
-int CXPButton::SetPosition(int nPosition)
+int CXPButton::SetPosition(XPBUTTON_POSITION nPosition)
 {
 	m_nPosition = nPosition;
+	return 0;
+}
+
+// 设置是否有边框
+int CXPButton::SetBorder(BOOL bBorder) 
+{
+	m_bBorder = bBorder;
 	return 0;
 }

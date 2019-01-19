@@ -350,6 +350,33 @@
     <None Include="res\print.bmp">
       <Filter>资源文件</Filter>
     </None>
+    <None Include="res\new.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\edit.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\del.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\query.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\refresh.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\save.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\address.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\copier.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\setup.bmp">
+      <Filter>资源文件</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ryprint.h">

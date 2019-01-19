@@ -105,6 +105,7 @@
     <None Include="res\add1.png" />
     <None Include="res\add2.ico" />
     <None Include="res\add2.png" />
+    <None Include="res\address.bmp" />
     <None Include="res\address.ico" />
     <None Include="res\address.png" />
     <None Include="res\aleft.ico" />
@@ -133,12 +134,14 @@
     <None Include="res\colorpicker.png" />
     <None Include="res\convert.ico" />
     <None Include="res\convert.png" />
+    <None Include="res\copier.bmp" />
     <None Include="res\copy.ico" />
     <None Include="res\copy.png" />
     <None Include="res\custom.ico" />
     <None Include="res\custom.png" />
     <None Include="res\cut.ico" />
     <None Include="res\cut.png" />
+    <None Include="res\del.bmp" />
     <None Include="res\del.ico" />
     <None Include="res\del.png" />
     <None Include="res\del1.ico" />
@@ -147,6 +150,7 @@
     <None Include="res\delete.png" />
     <None Include="res\document.ico" />
     <None Include="res\document.png" />
+    <None Include="res\edit.bmp" />
     <None Include="res\edit.ico" />
     <None Include="res\edit.png" />
     <None Include="res\exit.ico" />
@@ -163,6 +167,7 @@
     <None Include="res\info.png" />
     <None Include="res\lock.ico" />
     <None Include="res\lock.png" />
+    <None Include="res\new.bmp" />
     <None Include="res\new.ico" />
     <None Include="res\new.png" />
     <None Include="res\openfolder.ico" />
@@ -182,8 +187,10 @@
     <None Include="res\print.bmp" />
     <None Include="res\print.ico" />
     <None Include="res\print.png" />
+    <None Include="res\query.bmp" />
     <None Include="res\query.ico" />
     <None Include="res\query.png" />
+    <None Include="res\refresh.bmp" />
     <None Include="res\refresh.ico" />
     <None Include="res\refresh.png" />
     <None Include="res\Ryprint.ico" />
@@ -194,10 +201,12 @@
     <None Include="res\sameheight.png" />
     <None Include="res\samewidth.ico" />
     <None Include="res\samewidth.png" />
+    <None Include="res\save.bmp" />
     <None Include="res\save.ico" />
     <None Include="res\save.png" />
     <None Include="res\select.ico" />
     <None Include="res\select.png" />
+    <None Include="res\setup.bmp" />
     <None Include="res\setup.ico" />
     <None Include="res\setup.png" />
     <None Include="res\sort.ico" />

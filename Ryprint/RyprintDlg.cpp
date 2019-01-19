@@ -132,14 +132,10 @@ BOOL CRyprintDlg::OnInitDialog()
 		
 	//广告条		   
 	CString NaviPath;
-	NaviPath= theApp.m_Path + "/bills.htm";
+	NaviPath= theApp.m_Path + "/data/bills.htm";
 	m_hBrowser.Navigate(NaviPath.GetBuffer(),NULL,NULL,NULL,NULL);
 
-	//按钮初始状态
-	SetButtonStatus(0);
-	m_btnModgrps.SetBmp(IDB_BITMAP1);   //载入按钮图片
-	m_btnPrintbill.SetBmp(IDB_BITMAP_PRINT);
-	m_btnPrintbill.SetPosition(3);
+
 	//状态栏初始状态
 	m_edtStatus.SetWindowText("欢迎使用票据打印助手!");
 	//模板列表设置风格及读取
@@ -162,8 +158,10 @@ rectWindow.right -= 30;
 rectWindow.bottom -= 100;
 pView->MoveWindow(rectWindow);
 */
-	//导入按钮图标
-	LoadBtnIcon();
+	//按钮初始状态
+	SetButtonStatus(0);
+	// 设置按钮风格
+	SetButtonStyles();
 
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 }
@@ -493,11 +491,53 @@ int CRyprintDlg::DrawModule(void)
 }
 
 
-
-
-// 导入按钮图标
-int CRyprintDlg::LoadBtnIcon(void)
+// 设置按钮风格
+int CRyprintDlg::SetButtonStyles(void)
 {
+	// 单笔打印按钮
+	m_btnPrintbill.SetPicture(IDB_BITMAP_PRINT);
+	m_btnPrintbill.SetPictureSize(32,32);
+	m_btnPrintbill.SetPosition(XPBUTTON_VERTICAL);
+	m_btnPrintbill.SetBorder(FALSE);
+	// 按钮重新录入
+	m_btnReset.SetPicture(IDB_BITMAP_REFRESH);
+	m_btnReset.SetPictureSize(32,32);
+	m_btnReset.SetPosition(XPBUTTON_VERTICAL);
+	m_btnReset.SetBorder(FALSE);
+	// 按钮保存数据
+	m_btnSavedata.SetPicture(IDB_BITMAP_SAVE);
+	m_btnSavedata.SetPictureSize(32,32);
+	m_btnSavedata.SetPosition(XPBUTTON_VERTICAL);
+	m_btnSavedata.SetBorder(FALSE);
+	// 按钮数据仓库
+	m_btnDatalist.SetPicture(IDB_BITMAP_ADDRESS);
+	m_btnDatalist.SetPictureSize(32,32);
+	m_btnDatalist.SetPosition(XPBUTTON_VERTICAL);
+	m_btnDatalist.SetBorder(FALSE);
+	// 按钮批量打印
+	m_btnPrintbatch.SetPicture(IDB_BITMAP_COPIER);
+	m_btnPrintbatch.SetPictureSize(32,32);
+	m_btnPrintbatch.SetPosition(XPBUTTON_VERTICAL);
+	m_btnPrintbatch.SetBorder(FALSE);
+	// 按钮打印设置
+	m_btnSetup.SetPicture(IDB_BITMAP_SETUP);
+	m_btnSetup.SetPictureSize(32,32);
+	m_btnSetup.SetPosition(XPBUTTON_VERTICAL);
+	m_btnSetup.SetBorder(FALSE);
+	// 新建模板按钮
+	m_btnModnew.SetPicture(IDB_BITMAP_NEW);
+	m_btnModnew.SetPosition(XPBUTTON_HORIZONTAL);
+	// 修改模板按钮
+	m_btnModmodify.SetPicture(IDB_BITMAP_EDIT);
+	m_btnModmodify.SetPosition(XPBUTTON_HORIZONTAL);
+	// 删除模板按钮
+	m_btn_Moddel.SetPicture(IDB_BITMAP_DEL);
+	m_btn_Moddel.SetPosition(XPBUTTON_HORIZONTAL);
+	// 按钮查
+	m_btnQuery.SetPicture(IDB_BITMAP_QUERY);
+	m_btnQuery.SetPosition(XPBUTTON_HORIZONTAL);
+	m_btnQuery.SetPosition(XPBUTTON_PICTURE);
+
 
 	return 0;
 }

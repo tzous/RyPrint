@@ -89,8 +89,6 @@ public:
 	//主画板文档
 	CCreateContext pContext;
 
-	// 导入按钮图标
-	int LoadBtnIcon(void);
 	// 按钮类别管理
 	CXPButton m_btnModgrps;
 	// 按钮模板导入
@@ -117,4 +115,6 @@ public:
 	CXPButton m_btnPrintbatch;
 	// 按钮打印设置
 	CXPButton m_btnSetup;
+	// 设置按钮风格
+	int SetButtonStyles(void);
 };
