@@ -30,6 +30,8 @@ CXPButton::CXPButton()
 	m_InsideBoundryPenBottomSel.CreatePen(PS_INSIDEFRAME | PS_SOLID, 2, RGB(162, 201, 255));
 	
 	m_bOver = m_bSelected = m_bTracking = m_bFocus = FALSE;
+	m_bPic = FALSE;
+	m_nPosition = 0;
 	
 }
 
@@ -164,8 +166,38 @@ void CXPButton::DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct)
 				
 	pDC->SelectObject(pOldBrush);
 	
+	//按钮贴图
+	if(m_bPic) {
+		CRect picrect;
+		BOOL bBitBlt = TRUE;
+		switch(m_nPosition) {
+		case 0: bBitBlt = FALSE;
+			break;
+		case 1: picrect = rect;
+			break;
+		case 2: picrect.top = rect.top + 2;
+			picrect.left = rect.left + 2;
+			picrect.right = picrect.left + 32;
+			picrect.bottom = picrect.top + 32;
+			break;
+		case 3: picrect.top = rect.top + 2;
+			picrect.left = (rect.right+rect.left)/2  - 16;
+			picrect.right = picrect.left + 32;
+			picrect.bottom = picrect.top + 32;
+			break;
+		}
+		if(bBitBlt){
+			CDC MemDC;
+			MemDC.CreateCompatibleDC(pDC);
+			MemDC.SelectObject(&m_hBmp);
+			BITMAP bm;
+			m_hBmp.GetBitmap(&bm);
+			pDC->BitBlt(picrect.left, picrect.top, picrect.right, picrect.bottom, &MemDC, 0, 0, SRCCOPY);
+		}
+	}
+
 	//显示按钮的文本
-	if (strText!=NULL)
+	if (strText!=NULL )
 	{
 		CFont* hFont = GetFont();
 		CFont* hOldFont = pDC->SelectObject(hFont);
@@ -174,10 +206,23 @@ void CXPButton::DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct)
 		if (state & ODS_SELECTED) 
 			pt.Offset(1, 1);
 		int nMode = pDC->SetBkMode(TRANSPARENT);
-		if (state & ODS_DISABLED)
-			pDC->DrawState(pt, szExtent, strText, DSS_DISABLED, TRUE, 0, (HBRUSH)NULL);
-		else
-			pDC->DrawState(pt, szExtent, strText, DSS_NORMAL, TRUE, 0, (HBRUSH)NULL);
+		BOOL bDrawText = TRUE;
+		switch(m_nPosition) {
+		case 1:bDrawText = FALSE;
+			break;
+		case 2:
+			pt.Offset(32,0);
+			break;
+		case 3:
+			pt.Offset(0,16);
+			break;
+		}
+		if(bDrawText) {
+			if (state & ODS_DISABLED)
+				pDC->DrawState(pt, szExtent, strText, DSS_DISABLED, TRUE, 0, (HBRUSH)NULL);
+			else
+				pDC->DrawState(pt, szExtent, strText, DSS_NORMAL, TRUE, 0, (HBRUSH)NULL);
+		}
 		pDC->SelectObject(hOldFont);
 		pDC->SetBkMode(nMode);
 	}
@@ -263,3 +308,20 @@ void CXPButton::DrawInsideBorder(CDC *pDC, CRect* rect)
 }
 
 
+
+
+// 设置按钮图片资源
+int CXPButton::SetBmp(UINT nIDResource)
+{
+	m_hBmp.LoadBitmap(nIDResource);
+	m_bPic = TRUE;
+	return 0;
+}
+
+
+// 设置图片文字显示模式
+int CXPButton::SetPosition(int nPosition)
+{
+	m_nPosition = nPosition;
+	return 0;
+}

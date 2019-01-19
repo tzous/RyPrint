@@ -137,6 +137,9 @@ BOOL CRyprintDlg::OnInitDialog()
 
 	//按钮初始状态
 	SetButtonStatus(0);
+	m_btnModgrps.SetBmp(IDB_BITMAP1);   //载入按钮图片
+	m_btnPrintbill.SetBmp(IDB_BITMAP_PRINT);
+	m_btnPrintbill.SetPosition(3);
 	//状态栏初始状态
 	m_edtStatus.SetWindowText("欢迎使用票据打印助手!");
 	//模板列表设置风格及读取

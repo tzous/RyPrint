@@ -179,6 +179,7 @@
     <None Include="res\picturetopgallery.png" />
     <None Include="res\preview.ico" />
     <None Include="res\preview.png" />
+    <None Include="res\print.bmp" />
     <None Include="res\print.ico" />
     <None Include="res\print.png" />
     <None Include="res\query.ico" />

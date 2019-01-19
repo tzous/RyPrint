@@ -43,6 +43,11 @@ protected:
 	BOOL m_bSelected;	//按钮被按下是该值为true
 	BOOL m_bFocus;	//按钮为当前焦点所在时该值为true
 
+	//按钮贴图
+	BOOL m_bPic;	//有贴图时值为true，反之为false
+	CBitmap m_hBmp;	//图片资源
+	int m_nPosition;	//按钮图片文本类别 0-纯文本 1-纯图片 2-左图右文本 3-上图下文本
+
 // Operations
 public:
 
@@ -70,6 +75,11 @@ protected:
 	//}}AFX_MSG
 
 	DECLARE_MESSAGE_MAP()
+public:
+	// 设置按钮图片资源
+	int SetBmp(UINT nIDResource);
+	// 设置图片文字显示模式
+	int SetPosition(int nPosition);
 };
 
 /////////////////////////////////////////////////////////////////////////////
