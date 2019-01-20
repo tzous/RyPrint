@@ -14,7 +14,5 @@ public:
 	int StatusHeight;
 
 	CPoint WinMinSize;
-	// ∂¡»ÎINI≈‰÷√
-	int ReadIniFile(CString inifile);
 };
 

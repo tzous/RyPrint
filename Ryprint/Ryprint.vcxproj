@@ -221,14 +221,17 @@
     <ClInclude Include="BillModule.h" />
     <ClInclude Include="DlgNewMod.h" />
     <ClInclude Include="explorer1.h" />
+    <ClInclude Include="Misc.h" />
     <ClInclude Include="ModlueDlg.h" />
     <ClInclude Include="MyDocument.h" />
     <ClInclude Include="MyView.h" />
+    <ClInclude Include="ObFont.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Ryini.h" />
     <ClInclude Include="Ryprint.h" />
     <ClInclude Include="RyprintDlg.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Sysdata.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="XPButton.h" />
   </ItemGroup>
@@ -236,9 +239,11 @@
     <ClCompile Include="BillModule.cpp" />
     <ClCompile Include="DlgNewMod.cpp" />
     <ClCompile Include="explorer1.cpp" />
+    <ClCompile Include="Misc.cpp" />
     <ClCompile Include="ModlueDlg.cpp" />
     <ClCompile Include="MyDocument.cpp" />
     <ClCompile Include="MyView.cpp" />
+    <ClCompile Include="ObFont.cpp" />
     <ClCompile Include="Ryini.cpp" />
     <ClCompile Include="Ryprint.cpp" />
     <ClCompile Include="RyprintDlg.cpp" />
@@ -246,6 +251,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Sysdata.cpp" />
     <ClCompile Include="XPButton.cpp" />
   </ItemGroup>
   <ItemGroup>

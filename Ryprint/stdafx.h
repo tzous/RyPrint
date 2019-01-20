@@ -40,9 +40,11 @@
 #include <afxsock.h>            // MFC Ì×½Ó×ÖÀ©Õ¹
 
 
-#include "Ryini.h"
+#include "Ryprint.h"
+
 
 #include "BillModule.h"
+#include <afx.h>
 
 
 #ifdef _UNICODE

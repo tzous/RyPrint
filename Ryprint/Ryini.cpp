@@ -43,18 +43,3 @@ CRyini::~CRyini(void)
 }
 
 
-// 读入INI配置
-int CRyini::ReadIniFile(CString inifile)
-{
-//	char Buffer[256];
-//	::GetPrivateProfileString("SysWindow","ADLeft","5",Buffer,4,inifile);		// 广告窗口左边距
-//	AdRect.left = atoi(Buffer);
-//	::GetPrivateProfileString("SysWindow","ADRight","5",Buffer,4,inifile);		// 广告窗口右边距
-//	AdRect.right = atoi(Buffer);
-//	::GetPrivateProfileString("SysWindow","ADTop","5",Buffer,4,inifile);		// 广告窗口上边距
-//	AdRect.top = atoi(Buffer);
-//	::GetPrivateProfileString("SysWindow","ADBottom","115",Buffer,4,inifile);		// 广告窗口高
-//	AdRect.bottom = atoi(Buffer);
-
-	return 0;
-}

@@ -418,6 +418,15 @@
     <ClInclude Include="XPButton.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Sysdata.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ObFont.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Misc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Ryprint.cpp">
@@ -451,6 +460,15 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="XPButton.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Sysdata.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ObFont.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Misc.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -71,17 +71,16 @@ BOOL CRyprintApp::InitInstance()
 	// 更改用于存储设置的注册表项
 	// TODO: 应适当修改该字符串，
 	// 例如修改为公司或组织名
-	SetRegistryKey(_T("应用程序向导生成的本地应用程序"));
+	SetRegistryKey(_T("简单套打助手"));
 
-	// 得到当前主程序路径
+	// 得到当前主程序路径及相关文件路径
 	GetModuleFileName(NULL,m_Path.GetBufferSetLength (MAX_PATH+1),MAX_PATH);
 	m_Path.ReleaseBuffer();
 	int nPos;
 	nPos=m_Path.ReverseFind('\\');
 	m_Path=m_Path.Left(nPos);
-	//读入配置文件------为减少人为破坏，不建议用配置文件，所有一切在m_ryini中硬编码
-	m_iniFile = m_Path + "/Ryprint.ini";		
-	m_ryini.ReadIniFile(m_iniFile);
+	m_dataPath = m_Path + "/data";
+	m_tmplPath = m_Path + "/tmpl";
 
 
 	CRyprintDlg dlg;
