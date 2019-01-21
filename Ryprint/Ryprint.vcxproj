@@ -224,12 +224,14 @@
     <ClInclude Include="Misc.h" />
     <ClInclude Include="ModlueDlg.h" />
     <ClInclude Include="MyDocument.h" />
+    <ClInclude Include="MySqlite3.h" />
     <ClInclude Include="MyView.h" />
     <ClInclude Include="ObFont.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Ryini.h" />
     <ClInclude Include="Ryprint.h" />
     <ClInclude Include="RyprintDlg.h" />
+    <ClInclude Include="sqlite3.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Sysdata.h" />
     <ClInclude Include="targetver.h" />
@@ -242,6 +244,7 @@
     <ClCompile Include="Misc.cpp" />
     <ClCompile Include="ModlueDlg.cpp" />
     <ClCompile Include="MyDocument.cpp" />
+    <ClCompile Include="MySqlite3.cpp" />
     <ClCompile Include="MyView.cpp" />
     <ClCompile Include="ObFont.cpp" />
     <ClCompile Include="Ryini.cpp" />

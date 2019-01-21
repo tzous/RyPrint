@@ -81,7 +81,8 @@ BOOL CRyprintApp::InitInstance()
 	m_Path=m_Path.Left(nPos);
 	m_dataPath = m_Path + "/data";
 	m_tmplPath = m_Path + "/tmpl";
-
+	//读入系统数据
+	m_sysData.loadSysdata();
 
 	CRyprintDlg dlg;
 	m_pMainWnd = &dlg;

@@ -427,6 +427,12 @@
     <ClInclude Include="Misc.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="sqlite3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MySqlite3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Ryprint.cpp">
@@ -469,6 +475,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Misc.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MySqlite3.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
