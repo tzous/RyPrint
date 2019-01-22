@@ -377,6 +377,36 @@
     <None Include="res\setup.bmp">
       <Filter>资源文件</Filter>
     </None>
+    <None Include="res\pict.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\pictdel.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\aleft.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\aright.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\atop.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\abottom.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\samewidth.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\sameheight.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\add.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\cancel.bmp">
+      <Filter>资源文件</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ryprint.h">
@@ -406,9 +436,6 @@
     <ClInclude Include="BillModule.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="ModlueDlg.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="MyDocument.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -431,6 +458,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="MySqlite3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="List.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleDlg.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -456,9 +489,6 @@
     <ClCompile Include="BillModule.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="ModlueDlg.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="MyDocument.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -478,6 +508,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="MySqlite3.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="List.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleDlg.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

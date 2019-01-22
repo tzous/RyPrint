@@ -1,16 +1,16 @@
 #pragma once
 #include "explorer1.h"
+#include "XPButton.h"
 
+// CModuleDlg 对话框
 
-// CModlueDlg 对话框
-
-class CModlueDlg : public CDialogEx
+class CModuleDlg : public CDialogEx
 {
-	DECLARE_DYNAMIC(CModlueDlg)
+	DECLARE_DYNAMIC(CModuleDlg)
 
 public:
-	CModlueDlg(CWnd* pParent = NULL);   // 标准构造函数
-	virtual ~CModlueDlg();
+	CModuleDlg(CWnd* pParent = NULL);   // 标准构造函数
+	virtual ~CModuleDlg();
 
 // 对话框数据
 	enum { IDD = IDD_MODULE_DIALOG };
@@ -48,43 +48,52 @@ public:
 	// 凭证窗口大小
 	CRect m_mainRect;
 
-	// 新增字段
-	CButton m_btnNewItem;
-	// 修改字段属性
-	CButton m_btnModifyItem;
-	// 删除字段
-	CButton m_btnDelItem;
-	// 导入背景
-	CButton m_btnLoadJpg;
-	// 测试打印按钮
-	CButton m_btnTestPrint;
-	// 新建模板
-	CButton m_btnNewMod;
-	// 保存模板
-	CButton m_btnSaveMod;
-	// 删除模板
-	CButton m_btnDelMod;
 	// 当前模式 0-未选中模板打印 1-选中模板打印 2-模板设计，但模板未初始化 3-模板编辑状态
 	int m_imode;
 	//当前凭证模板
 	CBillModule m_currModule;
+
+
+	// 新增字段
+	CXPButton m_btnNewItem;
+	// 导入背景
+	CXPButton m_btnLoadJpg;
+	// 删除背景
+	CXPButton m_btnDelJpg;
+	// 左对齐
+	CXPButton m_btnAdjustLeft;
+	// 右对齐
+	CXPButton m_btnAdjustRight;
+	// 上对齐
+	CXPButton m_btnAdjustTop;
+	// 下对齐
+	CXPButton m_btnAdjustBottom;
+	// 相同宽度
+	CXPButton m_btnSameWidth;
+	// 相同高度
+	CXPButton m_btnSameHeight;
+	// 新建模板
+	CXPButton m_btnNewMod;
+	// 保存模板
+	CXPButton m_btnSaveMod;
+	// 测试打印按钮
+	CXPButton m_btnTestPrint;
 	// Cancel按钮
 	CButton m_btnCancel;
 	// 离开退出返回按钮
-	CButton m_btnExit;
+	CXPButton m_btnExit;
 
 	// 设置按钮状态
 	int SetButtonStatus(int imode);
 	afx_msg void OnBnClickedBtnNewitem();
-	afx_msg void OnBnClickedBtnDelitem();
-	afx_msg void OnBnClickedBtnItemattr();
 	afx_msg void OnBnClickedBtnLoadjpg();
 	afx_msg void OnBnClickedBtnTestprint();
 	afx_msg void OnBnClickedBtnNewmod();
 	afx_msg void OnBnClickedBtnSavemod();
-	afx_msg void OnBnClickedBtnDelmod();
 	afx_msg void OnBnClickedBtnExit();
 	// 绘制当前模板
 	int DrawModule(void);
 
+	// 设置按钮风格
+	int SetButtonStyles(void);
 };

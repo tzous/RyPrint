@@ -25,13 +25,25 @@ CRyini::CRyini(void)
 	GrpMenuRect.top = AdRect.bottom;	//位于广告条下面
 	GrpMenuRect.bottom = 210;		//高度
 
-	//主画板
+	//操作主画板
 	GrpMainRect.left = GrpModuleRect.right + 5;		//在模板信息框右
 	GrpMainRect.right = 5;	//距右边像素
 	GrpMainRect.top = GrpMenuRect.bottom;	//功能按钮区下
 	GrpMainRect.bottom = StatusHeight + 3;	 //位于状态条上
 
-	
+	//设计功能按钮区
+	DesignMenuRect.left =  5;	//距左边像素
+	DesignMenuRect.right = 5;	//距右边像素
+	DesignMenuRect.top = AdRect.bottom;	//位于广告条下面
+	DesignMenuRect.bottom = DesignMenuRect.top + 48;		//高度
+
+	//设计主画板
+	DesignMainRect.left =  5;		//距左边像素
+	DesignMainRect.right = 5;	//距右边像素
+	DesignMainRect.top = DesignMenuRect.bottom;	//功能按钮区下
+	DesignMainRect.bottom = StatusHeight + 3;	 //位于状态条上
+
+
 	//最小窗口
 	WinMinSize.x = 980;
 	WinMinSize.y = 720;

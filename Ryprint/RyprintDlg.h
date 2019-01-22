@@ -72,8 +72,6 @@ public:
 
 	// 设置按钮状态
 	int SetButtonStatus(int imode);
-	//点击模板设计按钮
-	afx_msg void OnBnClickedBtnDesignModule();
 	// 离开退出返回事件
 	afx_msg void OnBnClickedBtnExit();
 	// 根据关键字查询模板
@@ -117,4 +115,5 @@ public:
 	CXPButton m_btnSetup;
 	// 设置按钮风格
 	int SetButtonStyles(void);
+	afx_msg void OnBnClickedBtnModnew();
 };

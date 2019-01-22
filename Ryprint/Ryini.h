@@ -11,6 +11,9 @@ public:
 	CRect GrpModuleRect;
 	CRect GrpMainRect;
 	CRect GrpMenuRect;
+	CRect DesignMainRect;
+	CRect DesignMenuRect;
+
 	int StatusHeight;
 
 	CPoint WinMinSize;

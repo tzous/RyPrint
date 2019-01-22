@@ -12,7 +12,7 @@
 #endif
 
 #include "DlgNewMod.h"
-#include "ModlueDlg.h"
+#include "ModuleDlg.h"
 
 // 用于应用程序“关于”菜单项的 CAboutDlg 对话框
 
@@ -87,6 +87,7 @@ BEGIN_MESSAGE_MAP(CRyprintDlg, CDialogEx)
 	ON_WM_DESTROY()
 	ON_WM_SIZE()
 	ON_WM_GETMINMAXINFO()
+	ON_BN_CLICKED(IDC_BTN_MODNEW, &CRyprintDlg::OnBnClickedBtnModnew)
 END_MESSAGE_MAP()
 
 
@@ -431,13 +432,7 @@ int CRyprintDlg::SetButtonStatus(int imode)
 	return 0;
 }
 
-//点击模板设计按钮
-void CRyprintDlg::OnBnClickedBtnDesignModule()
-{
-	CModlueDlg modlueDlg;
-	modlueDlg.DoModal();
 
-}
 
 
 void CRyprintDlg::OnCancel()
@@ -535,9 +530,17 @@ int CRyprintDlg::SetButtonStyles(void)
 	m_btn_Moddel.SetPosition(XPBUTTON_HORIZONTAL);
 	// 按钮查
 	m_btnQuery.SetPicture(IDB_BITMAP_QUERY);
-	m_btnQuery.SetPosition(XPBUTTON_HORIZONTAL);
 	m_btnQuery.SetPosition(XPBUTTON_PICTURE);
 
 
 	return 0;
+}
+
+//点击新建模板按钮
+
+void CRyprintDlg::OnBnClickedBtnModnew()
+{
+	CModuleDlg moduleDlg;
+	moduleDlg.DoModal();
+
 }

@@ -97,8 +97,10 @@
     <None Include="..\..\..\..\Users\ryzho\Pictures\农行支票.bmp" />
     <None Include="..\Debug\bills.mht" />
     <None Include="ReadMe.txt" />
+    <None Include="res\abottom.bmp" />
     <None Include="res\abottom.ico" />
     <None Include="res\abottom.png" />
+    <None Include="res\add.bmp" />
     <None Include="res\add.ico" />
     <None Include="res\add.png" />
     <None Include="res\add1.ico" />
@@ -108,6 +110,7 @@
     <None Include="res\address.bmp" />
     <None Include="res\address.ico" />
     <None Include="res\address.png" />
+    <None Include="res\aleft.bmp" />
     <None Include="res\aleft.ico" />
     <None Include="res\aleft.png" />
     <None Include="res\aligncenter.ico" />
@@ -120,10 +123,13 @@
     <None Include="res\alignright.png" />
     <None Include="res\approve.ico" />
     <None Include="res\approve.png" />
+    <None Include="res\aright.bmp" />
     <None Include="res\aright.ico" />
     <None Include="res\aright.png" />
+    <None Include="res\atop.bmp" />
     <None Include="res\atop.ico" />
     <None Include="res\atop.png" />
+    <None Include="res\cancel.bmp" />
     <None Include="res\cancel.ico" />
     <None Include="res\cancel.png" />
     <None Include="res\cellstyle.ico" />
@@ -174,8 +180,10 @@
     <None Include="res\openfolder.png" />
     <None Include="res\option.ico" />
     <None Include="res\option.png" />
+    <None Include="res\pict.bmp" />
     <None Include="res\pict.ico" />
     <None Include="res\pict.png" />
+    <None Include="res\pictdel.bmp" />
     <None Include="res\pictdel.ico" />
     <None Include="res\pictdel.png" />
     <None Include="res\picture.ico" />
@@ -197,8 +205,10 @@
     <None Include="res\Ryprint.rc2" />
     <None Include="res\same.ico" />
     <None Include="res\same.png" />
+    <None Include="res\sameheight.bmp" />
     <None Include="res\sameheight.ico" />
     <None Include="res\sameheight.png" />
+    <None Include="res\samewidth.bmp" />
     <None Include="res\samewidth.ico" />
     <None Include="res\samewidth.png" />
     <None Include="res\save.bmp" />
@@ -221,8 +231,9 @@
     <ClInclude Include="BillModule.h" />
     <ClInclude Include="DlgNewMod.h" />
     <ClInclude Include="explorer1.h" />
+    <ClInclude Include="List.h" />
     <ClInclude Include="Misc.h" />
-    <ClInclude Include="ModlueDlg.h" />
+    <ClInclude Include="ModuleDlg.h" />
     <ClInclude Include="MyDocument.h" />
     <ClInclude Include="MySqlite3.h" />
     <ClInclude Include="MyView.h" />
@@ -241,8 +252,9 @@
     <ClCompile Include="BillModule.cpp" />
     <ClCompile Include="DlgNewMod.cpp" />
     <ClCompile Include="explorer1.cpp" />
+    <ClCompile Include="List.cpp" />
     <ClCompile Include="Misc.cpp" />
-    <ClCompile Include="ModlueDlg.cpp" />
+    <ClCompile Include="ModuleDlg.cpp" />
     <ClCompile Include="MyDocument.cpp" />
     <ClCompile Include="MySqlite3.cpp" />
     <ClCompile Include="MyView.cpp" />

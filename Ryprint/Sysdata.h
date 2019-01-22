@@ -1,10 +1,11 @@
 #pragma once
 #include "ObFont.h"
+#include "List.h"
 
 class CSysdata
 {
 private:
-	CString sSysdb;		//系统数据库路径名
+	CString sdbfile;	//系统数据库文件全路径名
 
 public:
 	CString sSysname;	//字体
@@ -17,6 +18,20 @@ public:
 	BOOL bAutoSave;		//单笔打印后是否自动保存
 	int nBatchrow;		// 批量数据起始行
 
+	typedef struct sysdata_type {
+		int tid;
+        CString tname;
+		int ptid;
+	}CSysType;
+	List<CSysType> systypes;	//系统类别表
+	typedef struct sysdata_voucher {
+		int vid;
+        CString vname;
+        CString vtext;
+        int tid;
+	}CSysVoucher;
+	List<CSysVoucher> sysvouchers;	//系统单据模板信息表
+
 public:
 	CSysdata(void);
 	~CSysdata(void);
@@ -27,5 +42,8 @@ private:
 public:
 	// 读取系统数据库
 	int loadSysdata(void);
+	int loadSysdata(CString sFile);
+	//设置当前系统数据库路径
+	int SetDbPath(CString sPath);
 };
 
