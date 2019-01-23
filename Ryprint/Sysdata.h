@@ -1,6 +1,7 @@
 #pragma once
 #include "ObFont.h"
-#include "List.h"
+#include <list>
+using namespace std;
 
 class CSysdata
 {
@@ -23,14 +24,14 @@ public:
         CString tname;
 		int ptid;
 	}CSysType;
-	List<CSysType> systypes;	//系统类别表
+	list<CSysType> systypes;	//系统类别表
 	typedef struct sysdata_voucher {
 		int vid;
         CString vname;
         CString vtext;
         int tid;
 	}CSysVoucher;
-	List<CSysVoucher> sysvouchers;	//系统单据模板信息表
+	list<CSysVoucher> sysvouchers;	//系统单据模板信息表
 
 public:
 	CSysdata(void);

@@ -451,19 +451,22 @@
     <ClInclude Include="ObFont.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Misc.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="sqlite3.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="MySqlite3.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="List.h">
+    <ClInclude Include="ModuleDlg.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="ModuleDlg.h">
+    <ClInclude Include="Voucher.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Element.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ZWfun.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -504,16 +507,19 @@
     <ClCompile Include="ObFont.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Misc.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="MySqlite3.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="List.cpp">
+    <ClCompile Include="ModuleDlg.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="ModuleDlg.cpp">
+    <ClCompile Include="Voucher.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Element.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ZWfun.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

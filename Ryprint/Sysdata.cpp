@@ -1,5 +1,5 @@
 #include "StdAfx.h"
-#include "Misc.h"
+#include "ZWfun.h"
 
 #include "MySqlite3.h"
 
@@ -28,7 +28,7 @@ CSysdata::~CSysdata(void)
 // 初始化系统数据库文件
 int CSysdata::InitSysData(void)
 {
-	if(CMisc::IsFileExist(sdbfile)) 
+	if(CZWfun::IsFileExist(sdbfile)) 
 		return 0;
 	CMySqlite3 mySqlite3;
 	int result;
@@ -83,7 +83,7 @@ int CSysdata::InitSysData(void)
 // 读取系统数据库
 int CSysdata::loadSysdata(void)
 {
-	if(!CMisc::IsFileExist(sdbfile)) {
+	if(!CZWfun::IsFileExist(sdbfile)) {
 		int ret = InitSysData();
 		if(ret != 0) return ret;
 	}
