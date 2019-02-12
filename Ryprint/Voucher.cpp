@@ -49,3 +49,20 @@ int CVoucher::getPixelHeight()		//凭证高度，像素
 {
 	return nPixelHeight;
 }
+
+// 初始化新凭证模板信息
+int CVoucher::InitBillMod(CString Name, CString Txt, int Width, int Height)
+{
+	isInit = TRUE;		//已初始化
+	sName = Name;
+    sText = Txt;
+	setWidth(Width);
+	setHeight(Height);
+
+	return 0;
+}
+//得到是否已初始化状态
+BOOL CVoucher::getIsInit()
+{
+	return isInit;
+}

@@ -8,9 +8,9 @@
 #include "afxwin.h"
 #include "afxcmn.h"
 #include "MyView.h"
-#include "MyDocument.h"
 #include "XPButton.h"		//自绘按钮类
-
+#include "MyDocument.h"
+#include "ModuleDlg.h"
 
 // CRyprintDlg 对话框
 class CRyprintDlg : public CDialogEx
@@ -65,8 +65,6 @@ public:
 
 	// 单据查询关键字
 	CEdit m_queryString;
-	//当前凭证模板
-	CBillModule m_currModule;
 	// 当前模式 0-未选中模板打印 1-选中模板打印 2-模板设计，但模板未初始化 3-模板编辑状态
 	int m_imode;
 
@@ -86,6 +84,7 @@ public:
 	CMyView* pView;
 	//主画板文档
 	CCreateContext pContext;
+	CModuleDlg m_moduleDlg;
 
 	// 按钮类别管理
 	CXPButton m_btnModgrps;

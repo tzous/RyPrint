@@ -11,6 +11,7 @@ public:
 	~CVoucher(void);
 
 private:
+	BOOL isInit;		//是否已初始化（即可绘制）
 	BOOL bBackGround;		//是否导入背景图
     int nWidth;				//凭证宽度，毫米
     int nHeight;			//凭证高度，毫米
@@ -31,6 +32,9 @@ public:
     void setHeight(int height);			//凭证高度，毫米
     int getHeight();			//凭证高度，毫米
     int getPixelHeight();		//凭证高度，像素
+	int InitBillMod(CString Name, CString Txt, int Width, int Height);	// 初始化新凭证模板信息
+	//得到是否已初始化状态
+	BOOL getIsInit();
 
 };
 

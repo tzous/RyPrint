@@ -1,11 +1,14 @@
 #pragma once
 
 // CMyDocument ÎÄµµ
+class CRypringDlg;
+class CModuleDlg;
 
 class CMyDocument : public CDocument
 {
 	//DECLARE_DYNCREATE(CMyDocument)
 	friend class CRypringDlg;
+	friend class CModuleDlg;
 
 public:
 	CMyDocument();

@@ -229,6 +229,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BillModule.h" />
+    <ClInclude Include="DesignView.h" />
     <ClInclude Include="DlgNewMod.h" />
     <ClInclude Include="Element.h" />
     <ClInclude Include="explorer1.h" />
@@ -251,6 +252,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BillModule.cpp" />
+    <ClCompile Include="DesignView.cpp" />
     <ClCompile Include="DlgNewMod.cpp" />
     <ClCompile Include="Element.cpp" />
     <ClCompile Include="explorer1.cpp" />

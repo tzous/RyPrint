@@ -23,6 +23,9 @@ public:
 	// 单据名称
 	CEdit m_edtModName;
 	CString m_modName;
+	// 单据显示名称
+	CEdit m_edtModTxt;
+	CString m_modTxt;
 	// 单据尺寸-宽
 	CEdit m_edtModWidth;
 	int m_modWidth;
@@ -30,4 +33,7 @@ public:
 	CEdit m_edtModHeight;
 	int m_modHeight;
 	virtual void OnOK();
+	// 单据类别
+	CComboBox m_cbModType;
+	virtual BOOL OnInitDialog();
 };

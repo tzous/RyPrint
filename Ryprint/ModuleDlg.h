@@ -1,6 +1,9 @@
 #pragma once
 #include "explorer1.h"
 #include "XPButton.h"
+#include "DesignView.h"
+#include "MyDocument.h"
+#include "Voucher.h"
 
 // CModuleDlg 对话框
 
@@ -48,11 +51,16 @@ public:
 	// 凭证窗口大小
 	CRect m_mainRect;
 
-	// 当前模式 0-未选中模板打印 1-选中模板打印 2-模板设计，但模板未初始化 3-模板编辑状态
-	int m_imode;
-	//当前凭证模板
-	CBillModule m_currModule;
+	// 编辑状态 0-否 1-是
+	int m_nMode;
 
+	//当前凭证模板
+	CVoucher m_voucher;
+
+	//主画板滚动视图
+	CDesignView * pView;
+	//主画板文档
+	CCreateContext pContext;
 
 	// 新增字段
 	CXPButton m_btnNewItem;

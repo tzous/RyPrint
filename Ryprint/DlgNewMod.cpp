@@ -16,6 +16,7 @@ CDlgNewMod::CDlgNewMod(CWnd* pParent /*=NULL*/)
 	, m_modName(_T(""))
 	, m_modWidth(0)
 	, m_modHeight(0)
+	, m_modTxt(_T(""))
 {
 
 }
@@ -33,6 +34,9 @@ void CDlgNewMod::DoDataExchange(CDataExchange* pDX)
 	DDX_Text(pDX, IDC_EDIT_MODNAME, m_modName);
 	DDX_Text(pDX, IDC_EDIT_MODWIDTH, m_modWidth);
 	DDX_Text(pDX, IDC_EDIT_MODHEIGHT, m_modHeight);
+	DDX_Control(pDX, IDC_EDIT1, m_edtModTxt);
+	DDX_Text(pDX, IDC_EDIT1, m_modTxt);
+	DDX_Control(pDX, IDC_COMBO1, m_cbModType);
 }
 
 
@@ -47,7 +51,7 @@ void CDlgNewMod::OnOK()
 {
 	// TODO: 在此添加专用代码和/或调用基类
 	UpdateData(TRUE);
-	if(m_modName.Trim().IsEmpty()) {
+	if(m_modName.Trim().IsEmpty() || m_modTxt.Trim().IsEmpty()) {
 		AfxMessageBox("输入要素不能为空！");
 		return;
 	}
@@ -60,4 +64,19 @@ void CDlgNewMod::OnOK()
 		return;
 	}
 	CDialogEx::OnOK();
+}
+
+
+BOOL CDlgNewMod::OnInitDialog()
+{
+	CDialogEx::OnInitDialog();
+
+	// 初始化类别下拉框
+	m_cbModType.AddString("常用");
+	m_cbModType.AddString("农行");
+	m_cbModType.AddString("其他");
+	m_cbModType.SetCurSel(0);
+
+	return TRUE;  // return TRUE unless you set the focus to a control
+	// 异常: OCX 属性页应返回 FALSE
 }

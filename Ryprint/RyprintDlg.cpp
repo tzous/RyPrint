@@ -12,7 +12,6 @@
 #endif
 
 #include "DlgNewMod.h"
-#include "ModuleDlg.h"
 
 // 用于应用程序“关于”菜单项的 CAboutDlg 对话框
 
@@ -143,10 +142,15 @@ BOOL CRyprintDlg::OnInitDialog()
 
 	//初始化模板树
 	QueryModules("");
+	//按钮初始状态
+	SetButtonStatus(0);
+	// 设置按钮风格
+	SetButtonStyles();
 
 	//创建主画板滚动视图
 CWnd* pFrameWnd = this;
 pContext.m_pCurrentDoc = new CMyDocument;
+
 pContext.m_pNewViewClass = RUNTIME_CLASS(CMyView);
 pView = (CMyView *)((CFrameWnd*)pFrameWnd)->CreateView(&pContext,IDC_MAIN_BOARD );
 ASSERT(pView);
@@ -159,10 +163,6 @@ rectWindow.right -= 30;
 rectWindow.bottom -= 100;
 pView->MoveWindow(rectWindow);
 */
-	//按钮初始状态
-	SetButtonStatus(0);
-	// 设置按钮风格
-	SetButtonStyles();
 
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 }
@@ -467,10 +467,7 @@ void CRyprintDlg::OnBnClickedBtnQueryModule()
 int CRyprintDlg::DrawModule(void)
 {
 	CDC* pDC=GetDC(); 
-	if(m_currModule.getIsInit()) {
-		m_currModule.Draw(pDC,m_mainRect);	//画当前凭证
-	} else {	//用背景色填充凭证模板窗口
-		pDC->MoveTo(m_mainRect.left,m_mainRect.top); 
+	pDC->MoveTo(m_mainRect.left,m_mainRect.top); 
 		CBrush brush(RGB(240,240,240) );
 
 		pDC->FillRect(m_mainRect,&brush); 
@@ -480,8 +477,6 @@ int CRyprintDlg::DrawModule(void)
 		//pDC->Rectangle(m_mainRect);
 		//pDC->SelectObject(pOldBrush);
 		MoveCtlWindow(IDC_MAIN_BOARD,m_mainRect);
-	}
-	
 	return 0;
 }
 
@@ -540,7 +535,7 @@ int CRyprintDlg::SetButtonStyles(void)
 
 void CRyprintDlg::OnBnClickedBtnModnew()
 {
-	CModuleDlg moduleDlg;
-	moduleDlg.DoModal();
+	
+	m_moduleDlg.DoModal();
 
 }

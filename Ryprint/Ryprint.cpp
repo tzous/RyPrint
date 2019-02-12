@@ -5,6 +5,7 @@
 #include "stdafx.h"
 #include "Ryprint.h"
 #include "RyprintDlg.h"
+#include "ModuleDlg.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -85,7 +86,9 @@ BOOL CRyprintApp::InitInstance()
 	m_sysData.SetDbPath(m_dataPath);
 	m_sysData.loadSysdata();
 
+
 	CRyprintDlg dlg;
+	//CModuleDlg dlg;
 	m_pMainWnd = &dlg;
 	INT_PTR nResponse = dlg.DoModal();
 	if (nResponse == IDOK)

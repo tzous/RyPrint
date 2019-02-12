@@ -100,12 +100,31 @@ BOOL CModuleDlg::OnInitDialog()
 	NaviPath= theApp.m_Path + "/data/bills.htm";
 	m_hBrowser.Navigate(NaviPath.GetBuffer(),NULL,NULL,NULL,NULL);
 
+	//状态栏初始状态
+	m_edtStatus.SetWindowText("欢迎使用票据打印助手!");
+	//非编辑状态
+	//m_nMode = 0;
+    m_nMode = 1;
+	m_voucher.InitBillMod("NAMENAME", "TXTXTXT", 210, 145);
+
 	//设置按钮风格
 	SetButtonStyles();
 	//按钮初始状态
-	SetButtonStatus(0);
-	//状态栏初始状态
-	m_edtStatus.SetWindowText("欢迎使用票据打印助手!");
+	SetButtonStatus(m_nMode);
+		//创建主画板滚动视图
+
+ UINT TargetCtrlID = IDC_GRP_MAIN;
+ CWnd *pWnd = this->GetDlgItem(TargetCtrlID);
+ CRect RectTargetCtrl;
+ pWnd->GetWindowRect(RectTargetCtrl);
+ pWnd->DestroyWindow();
+ this->ScreenToClient(RectTargetCtrl);
+ //在目标位置动态创建CScrollView
+pView = (CDesignView*)RUNTIME_CLASS(CDesignView)->CreateObject();
+pView->Create(NULL, NULL, AFX_WS_DEFAULT_VIEW|WS_VSCROLL|WS_HSCROLL, RectTargetCtrl, this, TargetCtrlID);
+pView->OnInitialUpdate();
+pView->ShowWindow(SW_SHOW);
+
 
 	return TRUE;  // return TRUE unless you set the focus to a control
 	// 异常: OCX 属性页应返回 FALSE
@@ -328,14 +347,14 @@ void CModuleDlg::OnSize(UINT nType, int cx, int cy)
 	
 }
 // 设置按钮状态
-int CModuleDlg::SetButtonStatus(int imode)
+int CModuleDlg::SetButtonStatus(int nEdited)
 {
 	m_btnCancel.ShowWindow(FALSE);
 	m_btnCancel.EnableWindow(TRUE);
 	m_btnExit.ShowWindow(TRUE);
 	m_btnExit.EnableWindow(TRUE);
 
-	switch(imode){
+	switch(nEdited){
 	case 1:
 		m_btnNewItem.EnableWindow(TRUE);
 		m_btnLoadJpg.EnableWindow(TRUE);
@@ -399,24 +418,27 @@ void CModuleDlg::OnBnClickedBtnTestprint()
 //新建模板
 void CModuleDlg::OnBnClickedBtnNewmod()
 {
-	if(m_currModule.getIsModified() > 0) {
+	if(m_nMode == 1) {
 		if(::MessageBox(NULL,"当前模板未保存，是否保存？","保存模板", MB_YESNO) == IDYES) {
 			OnBnClickedBtnSavemod();
 		}
 	}
+	//一些初始化屏幕操作
+	/*
+	*/
+
 	//输入新模板要素
 	CDlgNewMod dlgNewMod;
 	if(dlgNewMod.DoModal() == IDCANCEL)
 		return;
-	AfxMessageBox(dlgNewMod.m_modName);
+	//AfxMessageBox(dlgNewMod.m_modName);
 
 	//新建模板及后续处理
-	m_currModule.InitBillMod(dlgNewMod.m_modName, dlgNewMod.m_modWidth, dlgNewMod.m_modHeight);
+	m_voucher.InitBillMod(dlgNewMod.m_modName, dlgNewMod.m_modTxt, dlgNewMod.m_modWidth, dlgNewMod.m_modHeight);
 	//置新模板编辑状态
-
-	m_imode = 1;			//按钮状态
-	SetButtonStatus(m_imode);
-	//画初始模板占位框
+	m_nMode = 1;
+	SetButtonStatus(m_nMode);
+	// 刷新画板
     DrawModule();
 
 }
@@ -425,7 +447,9 @@ void CModuleDlg::OnBnClickedBtnNewmod()
 void CModuleDlg::OnBnClickedBtnSavemod()
 {
 	AfxMessageBox("保存模板");
-	m_currModule.SaveBillMod();
+	//
+	m_nMode = 0;
+
 
 }
 
@@ -433,7 +457,7 @@ void CModuleDlg::OnBnClickedBtnSavemod()
 //返回
 void CModuleDlg::OnBnClickedBtnExit()
 {
-	if(m_currModule.getIsModified()) {
+	if(m_nMode == 1) {
 		if(::MessageBox(NULL,"当前模板未保存，是否保存？","保存模板", MB_YESNO) == IDYES) {
 			OnBnClickedBtnSavemod();
 		}
@@ -445,20 +469,6 @@ void CModuleDlg::OnBnClickedBtnExit()
 int CModuleDlg::DrawModule(void)
 {
 	CDC* pDC=GetDC(); 
-	if(m_currModule.getIsInit()) {
-		m_currModule.Draw(pDC,m_mainRect);	//画当前凭证
-	} else {	//用背景色填充凭证模板窗口
-		pDC->MoveTo(m_mainRect.left,m_mainRect.top); 
-		CBrush brush(RGB(240,240,240) );
-
-		pDC->FillRect(m_mainRect,&brush); 
-		//绘制空矩形占位
-		//CBrush *pBrush=CBrush::FromHandle((HBRUSH)GetStockObject(NULL_BRUSH));
-		//CBrush *pOldBrush=pDC->SelectObject(&brush);
-		//pDC->Rectangle(m_mainRect);
-		//pDC->SelectObject(pOldBrush);
-	}
-	
 	return 0;
 }
 

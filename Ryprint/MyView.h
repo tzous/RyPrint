@@ -8,6 +8,7 @@ class CMyView : public CScrollView
 {
 	//DECLARE_DYNCREATE(CMyView)
 	friend class CRyprintDlg;
+	friend class CModuleDlg;
 protected:
 	CMyView();           // 动态创建所使用的受保护的构造函数
 	DECLARE_DYNCREATE(CMyView)
